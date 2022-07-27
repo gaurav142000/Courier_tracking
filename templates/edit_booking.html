@@ -1,0 +1,88 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1 align="center"><i>Edit Booking Details</i></h1>
+
+{% if kota %}
+
+<form method="post" action="edit_booking1" class="row g-3 my-4 mx-2" enctype="multipart/form-data">
+
+     <div class="col-md-4">
+        <label for="inputdate" class="form-label">Consignment No.</label>
+        <input type="text" readonly name="T1" class="form-control" id="inputdate" value="{{kota[0]}}">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputdate" class="form-label">Date</label>
+        <input type="date" name="T2" class="form-control" id="inputdate" value="{{kota[2]}}">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputtext" class="form-label">From State</label>
+        <input type="text" name="T3" class="form-control" id="inputtext" value="{{kota[3]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputcity" class="form-label">From City</label>
+        <input type="text" name="T4" class="form-control" id="inputcity" value="{{kota[4]}}">
+    </div>
+    <div class="col-4 my-4">
+        <label for="inputstate" class="form-label">To State</label>
+        <input type="text" name="T5" class="form-control" id="inputstate" value="{{kota[5]}}">
+    </div>
+    <div class="col-md-4 my-4">
+        <label for="city" class="form-label">To City</label>
+        <input type="text" name="T6" class="form-control" id="city" value="{{kota[6]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputname" class="form-label">Sender's Name </label>
+        <input type="text" name="T7" class="form-control" id="inputname" value="{{kota[7]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputsd" class="form-label">Sender Address(*with zip code)</label>
+        <input type="text" name="T8" class="form-control" id="inputsd" value="{{kota[8]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputcon" class="form-label">Sender Contact</label>
+        <input type="text" name="T9" class="form-control" id="inputcon" value="{{kota[9]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrn" class="form-label">Receiver's Name</label>
+        <input type="text" name="T10" class="form-control" id="inputrn" value="{{kota[10]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrd" class="form-label">Receiver's Address(*with zip code)</label>
+        <input type="text" name="T11" class="form-control" id="inputrd" value="{{kota[11]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrcon" class="form-label">Receiver's Contact</label>
+        <input type="text" name="T12" class="form-control" id="inputrcon" value="{{kota[12]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputweight" class="form-label">Weight</label>
+        <input type="text" name="T13" class="form-control" id="inputweight" value="{{kota[13]}}">
+    </div>
+
+
+
+    <div class="col-12 my-4">
+        <input type="submit" class="btn btn-primary" name="B1" value="Edit" />
+    </div>
+
+    <div class="container" align="right">
+        <a class="btn btn-primary"  href="show_booking" role="button">Back to Booking</a>
+    </div>
+</form>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}
+

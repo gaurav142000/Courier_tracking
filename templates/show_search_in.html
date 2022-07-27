@@ -1,0 +1,74 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<style xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    #txt{
+        margin-left:5px;
+    }
+
+    #s{
+        font-size:20px;
+        font-weight:500;
+      }
+
+</style>
+
+
+<h1 align="center">Incoming Consignment</h1>
+
+<div class="container my-4" align="center">
+    <form method="post" action="in_con">
+        <p><span id="s">Search</span><input type="search" name="T1" id="txt" placeholder="Consignment Number">
+        <input type="submit" name="B1" value="Search"/></p>
+    </form>
+</div>
+
+{% if kota %}
+
+<table class="my-4" border="1" style="border-collapse:collapse" width="100%">
+    {% for b in kota %}
+    <tr>
+        <td>
+            <p align="center"><b>Consignment Number:{{b[0]}}</b></p>
+            <p>Date:{{b[1]}}</p>
+            <p><b>From State:{{b[2]}}</b></p>
+            <p><b>From City:{{b[3]}}</b></p>
+            <p><b>To State:{{b[4]}}</b></p>
+            <p><b>To City:{{b[5]}}</b></p>
+            <p>Sender's Name:{{b[6]}}</p>
+            <p>Sender's Address:{{b[7]}}</p>
+            <p>Contact No.:{{b[8]}}</p>
+            <p>Receiver's Name:{{b[9]}}</p>
+            <p>Reciever's Address:{{b[10]}}</p>
+            <p>Contact No.:{{b[11]}}</p>
+            <p>Weight:{{b[12]}}</p>
+        </td>
+
+        <td>
+            <form align="center" method="post" action="edit_booking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+            <form align="center" class="my-4" method="post" action="delete_booking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+
+            <form align="center" class="my-4" method="post" action="show_tracking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="submit" name="B1" value="Track"/>
+            </form>
+
+             <form align="center" class="my-4" method="post" action="show_bill">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="submit" name="B1" value="Invoice"/>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% elif msg %}
+    <h3 align="center">{{msg}}</h3>
+{% endif %}
+{% endblock %}

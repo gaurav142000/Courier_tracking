@@ -1,0 +1,25 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1>Edit Invoice</h1>
+
+{% if kota %}
+
+<form method="post" action="edit_bill1">
+    <p>Consignment Number<input readonly type="text" name="T1" value="{{kota[0]}}"/></p>
+    <p>Agency<input type="text" name="T2" value="{{kota[1]}}"/></p>
+    <p>Date<input type="date" name="T3" value="{{kota[2]}}"/></p>
+    <p>Name<input type="text" name="T4" value="{{kota[3]}}"/></p>
+    <p>Address<input type="text" name="T5" value="{{kota[4]}}"/></p>
+    <p>Contact<input type="text" name="T6" value="{{kota[5]}}"/></p>
+    <p>Weight<input type="text" name="T7" value="{{kota[6]}}"/></p>
+    <p>Price<input type="text" name="T8" value="{{kota[7]}}"/></p>
+    <p>Taxes & Charges<input type="text" name="T9" value="{{kota[8]}}"/></p>
+    <p><input type="submit" name="B1" value="Edit"/></p>
+</form>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

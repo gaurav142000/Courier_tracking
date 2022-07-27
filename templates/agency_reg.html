@@ -1,0 +1,23 @@
+{% extends "admin.html" %}
+    {% block admin %}
+
+
+
+<h1>Agency Registration</h1>
+
+<form method="post" action="agency_reg">
+    <p>Name<input type="text" name="T1"/></p>
+    <p>Address<input type="text" name="T2"/></p>
+    <p>City Name<input type="text" name="T3"/></p>
+    <p>State Name<input type="text" name="T4"/></p>
+    <p>Contact No.<input type="text" name="T5"/></p>
+    <p>Email<input type="email" name="T6"/></p>
+    <p>Password<input type="password" name="T7"/></p>
+    <p>Confirm Password<input type="password" name="T8"/></p>
+    <p><input type="submit" name="B1" value="Submit"/></p>
+</form>
+
+{% if result %}
+   {{result}}
+{% endif %}
+{% endblock %}

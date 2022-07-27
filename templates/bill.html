@@ -1,0 +1,77 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+
+
+<h1 align="center"><i>INVOICE</i></h1>
+<form method="post" action="bill" class="row g-3 my-4 mx-2" enctype="multipart/form-data">
+    <div class="col-md-4">
+        <label for="inputdate" class="form-label">Consignment Number</label>
+        <input type="text" name="T1" class="form-control" id="inputdate">
+    </div>
+    <div class="col-md-4">
+        <label for="inputtext" class="form-label">Agency</label>
+        <input type="text" name="T2" class="form-control" id="inputtext">
+    </div>
+    <div class="col-md-4">
+        <label for="inputcity" class="form-label">Date</label>
+        <input type="date" name="T3" class="form-control" id="inputcity">
+    </div>
+    <div class="col-4 my-4">
+        <label for="inputstate" class="form-label">Name</label>
+        <input type="text" name="T4" class="form-control" id="inputstate">
+    </div>
+    <div class="col-md-4 my-4">
+        <label for="city" class="form-label">Address</label>
+        <input type="text" name="T5" class="form-control" id="city">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputname" class="form-label">Contact </label>
+        <input type="text" name="T6" class="form-control" id="inputname">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputsd" class="form-label">Weight</label>
+        <input type="text" name="T7" class="form-control" id="inputsd">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputcon" class="form-label">Price</label>
+        <input type="text" name="T8" class="form-control" id="inputcon">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrn" class="form-label">Taxes & Charges</label>
+        <input type="text" name="T9" class="form-control" id="inputrn">
+    </div>
+
+     <div class="col-12 my-4">
+        <input type="submit" class="btn btn-primary" name="B1" value="Submit" />
+
+    </div>
+
+
+</form>
+
+
+
+
+<!--<form method="post" action="bill">
+    <p>Consignment Number<input type="text" name="T1"/></p>
+    <p>Agency<input type="text" name="T2"/></p>
+    <p>Date<input type="date" name="T3"/></p>
+    <p>Name<input type="text" name="T4"/></p>
+    <p>Address<input type="text" name="T5"/></p>
+    <p>Contact Number<input type="text" name="T6"/></p>
+    <p>Weight<input type="text" name="T7"/></p>
+    <p>Price<input type="text" name="T8"/></p>
+    <p>Taxes & Charges <input type="text" name="T9"/></p>
+    <p><input type="submit" name="B1" value="Submit"/></p>
+</form>-->
+
+{% if result %}
+    <h3>{{result}}</h3>
+{% endif %}
+
+{% endblock %}

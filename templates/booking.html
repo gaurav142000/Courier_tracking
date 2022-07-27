@@ -1,0 +1,92 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1 align="center">Booking</h1>
+
+<form method="post" action="booking_reg" class="row g-3 my-4 mx-2 my-4" >
+
+    <div class="col-md-4">
+        <label for="inputdate" class="form-label">Date</label>
+        <input type="date" name="T1" class="form-control" id="inputdate">
+    </div>
+    <div class="col-md-4">
+        <label for="inputtext" class="form-label">From State</label>
+        <input type="text" name="T2" class="form-control" id="inputtext">
+    </div>
+    <div class="col-md-4 ">
+        <label for="inputcity" class="form-label">From City</label>
+        <input type="text" name="T3" class="form-control" id="inputcity">
+    </div>
+    <div class="col-4 my-4">
+        <label for="inputstate" class="form-label">To State</label>
+        <input type="text" name="T4" class="form-control" id="inputstate">
+    </div>
+    <div class="col-md-4 my-4">
+        <label for="city" class="form-label">To City</label>
+        <input type="text" name="T5" class="form-control" id="city">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputname" class="form-label">Sender's Name </label>
+        <input type="text" name="T6" class="form-control" id="inputname">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputsd" class="form-label">Sender Address(*with zip code)</label>
+        <input type="text" name="T7" class="form-control" id="inputsd">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputcon" class="form-label">Sender Contact</label>
+        <input type="text" name="T8" class="form-control" id="inputcon">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrn" class="form-label">Receiver's Name</label>
+        <input type="text" name="T9" class="form-control" id="inputrn">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrd" class="form-label">Receiver's Address(*with zip code)</label>
+        <input type="text" name="T10" class="form-control" id="inputrd">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputrcon" class="form-label">Receiver's Contact</label>
+        <input type="text" name="T11" class="form-control" id="inputrcon">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="inputweight" class="form-label">Weight</label>
+        <input type="text" name="T12" class="form-control" id="inputweight">
+    </div>
+
+   <!--- <select class="form-select col-md-4 my-4" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>-->
+
+    <div class="col-md-4 my-4">
+            <label for="inputem1" class="form-label">Center's Email</label>
+            <input type="email" name="T14" class="form-control" id="inputem1">
+        </div>
+
+    <div class="col-12 my-4">
+        <input type="submit" class="btn btn-primary" name="B1" value="Submit" />
+        <a class="btn btn-primary" href="bill" role="button">Invoice</a>
+    </div>
+
+
+</form>
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+
+
+
+
+
+{% endblock %}

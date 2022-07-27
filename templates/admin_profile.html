@@ -1,0 +1,22 @@
+{% extends "admin.html" %}
+  {% block admin %}
+
+<h1>Admin's Profile</h1>
+
+{% if kota %}
+  {{kota}}
+
+       <p>Name:{{kota[0]}}</p>
+       <p>Address:{{kota[1]}}</p>
+       <p>Contact No.:{{kota[2]}}</p>
+       <p>Email:{{kota[3]}}</p>
+
+       <form method="post" action="admin_profile1">
+           <input type="submit" name="B1" value="Edit"/>
+       </form>
+
+{% elif msg %}
+   {{msg}}
+{% endif %}
+
+{% endblock %}

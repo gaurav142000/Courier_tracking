@@ -1,0 +1,40 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1 align="center"><i>INVOICE</i></h1>
+
+<div class="container">
+    <a class="btn btn-primary" href="bill" role="button">Invoice</a>
+</div>
+
+{% if kota %}
+
+<table class="my-4" border="1" style="border-collapse:collapse" width="100%">
+    {% for b in kota %}
+    <tr>
+        <td>
+            <p align="center"><b>Consignment Number:{{b[0]}}</b></p>
+            <p>Agency:{{b[1]}}</p>
+            <p>Date:{{b[2]}}</p>
+            <p>Name:{{b[3]}}</p>
+            <p>Address:{{b[4]}}</p>
+            <p>Contact No.:{{b[5]}}</p>
+            <p>Weight:{{b[6]}}Kg</p>
+            <p>Price:Rs.{{b[7]}}</p>
+            <p>Taxes & charges:{{b[8]}}</p>
+            <p><b>Total Amount:Rs.{{bill}}</b></p>
+        </td>
+
+        <td>
+            <form method="post" align="center" action="edit_bill">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}

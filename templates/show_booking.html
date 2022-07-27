@@ -1,0 +1,91 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<style xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    #txt{
+        margin-left:5px;
+    }
+
+    #s{
+        font-size:20px;
+        font-weight:500;
+    }
+
+    #table{
+        border-radius:0px 0px 20px 20px;
+        box-shadow:10pz 10px 20px black;
+    }
+
+</style>
+
+<h1 align="center">Show Booking Details</h1>
+
+<div class="container my-4" align="center">
+    <form method="post" action="search_con">
+        <p><span id="s">Search</span><input type="search" name="T1" id="txt" placeholder="Consignment Number">
+        <input type="submit" name="B1" value="Search"/></p>
+    </form>
+</div>
+
+
+{% if kota %}
+<table id="table" border="1" style="border-collapse:collapse" width="100%">
+    {% for b in kota %}
+    <tr>
+        <td>
+            <p align="center"><b>Consignment Number:{{b[0]}}</b></p>
+           <p>Booked At:{{b[1]}}</p>
+            <p>Date:{{b[2]}}</p>
+            <p>From State:{{b[3]}}</p>
+            <p>From City:{{b[4]}}</p>
+            <p>To State:{{b[5]}}</p>
+            <p>To City:{{b[6]}}</p>
+            <p>Sender's Name:{{b[7]}}</p>
+            <p>Sender's Address:{{b[8]}}</p>
+            <p>Contact No.:{{b[9]}}</p>
+            <p>Receiver's Name:{{b[10]}}</p>
+            <p>Reciever's Address:{{b[11]}}</p>
+            <p>Contact No.:{{b[12]}}</p>
+            <p>Weight:{{b[13]}}</p>
+        </td>
+
+        <td>
+            <form align="center" method="post" action="edit_booking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="hidden" name="H2" value="{{b[2]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+            <form align="center" class="my-4" method="post" action="delete_booking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="hidden" name="H2" value="{{b[2]}}"/>
+                <input type="submit" name="B1" value="Delete"/>
+            </form>
+
+
+
+            <form align="center" class="my-4" method="post" action="show_tracking">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                <input type="hidden" name="H2" value="{{b[2]}}"/>
+                <input type="submit" name="B1" value="Track"/>
+            </form>
+
+             <form align="center" class="my-4" method="post" action="show_bill">
+                <input type="hidden" name="H1" value="{{b[0]}}"/>
+                 <input type="hidden" name="H2" value="{{b[2]}}"/>
+                <input type="submit" name="B1" value="Invoice"/>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="my-2" align="right">
+    <a href="#">Back To Top</a>
+</div>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

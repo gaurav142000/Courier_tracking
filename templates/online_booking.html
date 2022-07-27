@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="static\bootstrap.css">
+    <script src="static\jquery-3.4.1.min.js"></script>
+
+    <script src="static\bootstrap.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        #st{
+           border:2px solid black;
+           padding-bottom:20px;
+           padding-top:20px;
+
+
+        }
+        #st1{
+           border:2px solid black;
+           padding-bottom:20px;
+           padding-top:20px;
+           margin-left:200px;
+        }
+        #w{
+           padding-left:40px;
+        }
+        #T13
+        {
+            border:1px solid black;
+        }
+
+        #sf
+        {
+            margin-left:300px;
+            font-weight:700;
+            font-size:23px;
+        }
+
+        #send
+        {
+            margin-left:400px;
+            font-weight:700;
+            font-size:23px;
+        }
+
+        #dt
+        {
+            font-weight:400;
+            font-size:20px;
+        }
+
+    </style>
+</head>
+
+<body id="b">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#"><i class='bx bxs-truck' style='color:rgb(246, 242, 242)'></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Booking</a>
+                </li>
+
+            </ul>
+
+            <div class="mx-2">
+                <button class="btn btn-danger" data-toggle="modal" data-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                        </svg>Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="login">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="T1" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Pass1">Password</label>
+                            <input type="password" name="T2" class="form-control" id="Pass1">
+                        </div>
+
+                        <button type="submit" class="btn1 btn-primary">Login</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 align="center">Online Booking</h2>
+
+<form method="post" action="online_booking" class="my-4">
+
+    <div class="container col-md-4">
+        <p><span id="dt">Date</span><input id="T13" type="date" class="form-control" name="T2"/></p>
+    </div>
+
+     <p id="sf">Send From
+         <span id="send">Send To</span></p>
+    <div class="container-fluid my-4">
+         <div class="row">
+
+             <div id="st1" class="col-md-4">
+
+                    State/Union Territory<input type="text" name="T3" class="form-control"/>
+                    City/District<input type="text" name="T4" class="form-control"/>
+                    Name<input type="text" name="T7" class="form-control"/>
+                    Address<input type="text" name="T8" class="form-control"/>
+                    Contact No.<input type="text" name="T9" class="form-control"/>
+             </div>
+
+
+             <div id="st" class="col-md-4 mx-4">
+
+                    State/Union Territory<input type="text" name="T5" class="form-control"/>
+                    City/District<input type="text" name="T6" class="form-control"/>
+                    Name<input type="text" name="T10" class="form-control"/>
+                    Address<input type="text" name="T11" class="form-control"/>
+                    Contact No.<input type="text" name="T12" class="form-control"/>
+             </div>
+         </div>
+    </div>
+
+    <div id="w" class="container" >
+        <div class=" row  mx-4 " >
+            <div  class="col-md-4 mx-4">
+                <p><span id="dt">Weight(in kgs)</span><input id="T13"  type="text" class="form-control" name="T13" ></p>
+            </div>
+         </div>
+    </div>
+
+    <div align="center">
+        <p><input class="btn btn-danger" type="submit" name="B1" value="Submit"/></p>
+    </div>
+
+</form>
+
+{% if msg %}
+    <h3 align="center">{{msg}}</h3>
+{% endif %}
+
+</body>
+</html>

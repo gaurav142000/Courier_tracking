@@ -1,0 +1,27 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+
+<h1 align="center">Show Agency's Branch</h1>
+
+{% if kota %}
+   {{kota}}
+{% for r in kota %}
+<table border="1" style="border-collapse:collapse;" width="50%">
+        <tr>
+            <td>
+                <p>city:{{r[0]}}</p>
+                <p>State:{{r[1]}}</p>
+                <p>Details:{{r[2]}}</p>
+
+            </td>
+        </tr>
+
+    </table>
+{% endfor %}
+
+{% elif msg %}
+   {{msg}}
+
+{% endif %}
+{% endblock %}

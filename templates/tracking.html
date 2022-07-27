@@ -1,0 +1,43 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1 align="center">Tracking</h1>
+
+<form method="post" action="tracking" class="row g-3 my-4 mx-2" enctype="multipart/form-data">
+
+    <div class="col-md-4">
+        <label for="inputcon" class="form-label">Consignment No.</label>
+        <input type="text" name="T1" class="form-control" id="inputcon">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputtext" class="form-label">Date</label>
+        <input type="date" name="T2" class="form-control" id="inputtext">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputcity" class="form-label">Time</label>
+        <input type="time" name="T3" class="form-control" id="inputcity">
+    </div>
+
+    <div class="col-4 my-4">
+        <label for="inputstate" class="form-label">Office</label>
+        <input type="text" name="T4" class="form-control" id="inputstate">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="city" class="form-label">Event</label>
+        <input type="text" name="T5" class="form-control" id="city">
+    </div>
+
+    <div class="col-12 my-4">
+        <input type="submit" class="btn btn-primary" name="B1" value="Submit" />
+    </div>
+
+</form>
+
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

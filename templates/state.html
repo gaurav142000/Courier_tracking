@@ -1,0 +1,14 @@
+<h1>Agency's Branch</h1>
+
+<form method="post" action="state">
+    <p>State Name<input type="text" name="T1"/></p>
+    <p>City Name 1<input type="text" name="T2"/></p>
+    <p>City Name 2<input type="text" name="T3"/></p>
+    <p>City Name 3<input type="text" name="T4"/></p>
+    <p>City Name 4<input type="text" name="T5"/></p>
+    <p><input type="submit" name="B1" value="Submit"/></p>
+</form>
+
+{% if msg %}
+   {{msg}}
+{% endif %}

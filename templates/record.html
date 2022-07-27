@@ -1,0 +1,163 @@
+<html>
+<head>
+
+    <title>
+        Courier Record
+    </title>
+    <link rel="stylesheet" href="static\bootstrap.css">
+    <script src="static\jquery-3.4.1.min.js"></script>
+
+    <script src="static\bootstrap.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    #img{
+        margin-left:550px;
+       }
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<!--Nav Bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#"><i class='bx bxs-truck' style='color:rgb(246, 242, 242)'></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="online_booking">Booking</a>
+                </li>
+
+            </ul>
+
+            <div class="mx-2">
+                <button class="btn btn-danger" data-toggle="modal" data-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+<!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                        </svg>Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="login">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="T1" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Pass1">Password</label>
+                            <input type="password" name="T2" class="form-control" id="Pass1">
+                        </div>
+
+                        <button type="submit" class="btn1 btn-primary">Login</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<img id="img" src="static/photo/courier2.jpg" class="img-fluid">
+
+
+
+{% if kota %}
+    {% for b in kota %}
+        <table id="A1" class="table table-bordered bg-light my-2" width="100%">
+            <thead>
+                <tr>
+                    <th  scope="col">Booked At</th>
+                    <th  scope="col">Booked On</th>
+                    <th  scope="col">Source Location</th>
+                    <th  scope="col">Tariff</th>
+                    <th  scope="col">Receiver's Name</th>
+                    <th  scope="col">Delivery Location</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                `<tr>
+                    <td>{{b[3]}}</td>
+                    <td>{{b[2]}}</td>
+                    <td>{{b[8]}}</td>
+                    <td>Rs.{{bill}}</td>
+                    <td>{{b[10]}}</td>
+                    <td>{{b[11]}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+<div class="my-4">
+    <h4><i>Event Details For:{{b[0]}}</i></h4>
+
+</div>
+{% endfor %}
+{% endif %}
+
+
+
+
+<table class="table table-bordered bg-light my-4 " width="100%">
+    <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Office</th>
+            <th scope="col">Event</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if kota1 %}
+        {% for t in kota1 %}
+
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{t[1]}}</td>
+                    <td>{{t[2]}}</td>
+                    <td>{{t[3]}}</td>
+                    <td>{{t[4]}}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+<div align="right">
+<a href="#">Back To Top</a>
+</div>
+</body>
+</html>

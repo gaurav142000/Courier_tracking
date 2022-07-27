@@ -1,0 +1,57 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="static/bootstrap.css">
+    <script src="static/bootstrap.js"></script>
+    <script src="static/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+<h1 align="center">Show Tracking Details</h1>
+
+<div align="right" class="col-12">
+    <a class="btn btn-primary" href="tracking" role="button">Tracking</a>
+</div>
+
+<table class="table table-bordered  bg-light my-2" width="100%">
+            <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th  scope="col">Consignment Number</th>
+                    <th  scope="col">Date</th>
+                    <th  scope="col">Time</th>
+                    <th  scope="col">Office</th>
+                    <th  scope="col">Event</th>
+                    <th  scope="col">Edit</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% if kota %}
+                    {% for b in kota %}
+                        <tr>
+                        `<th scope="row">{{loop.index}}</th>
+                                <td>{{b[0]}}</td>
+                                <td>{{b[1]}}</td>
+                                <td>{{b[2]}}</td>
+                                <td>{{b[3]}}</td>
+                                <td>{{b[4]}}</td>
+                                <td>
+                                    <form align="center" method="post" action="edit_tracking">
+                                        <input type="hidden" name="H1" value="{{b[0]}}"/>
+                                        <input type="submit" name="B1" value="Edit"/>
+                                    </form>
+                                </td>
+                            </tr>
+                    {% endfor %}
+                {% endif %}
+
+            </tbody>
+        </table>
+
+</body>
+</html>
+
+{% endblock %}

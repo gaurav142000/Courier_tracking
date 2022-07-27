@@ -1,0 +1,14 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1>Updated Details</h1>
+
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+<h3>
+    <a href="show_bill">Continue</a>
+</h3>
+
+{% endblock %}

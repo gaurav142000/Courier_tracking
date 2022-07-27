@@ -1,0 +1,54 @@
+{% extends "admin.html" %}
+  {% block admin %}
+
+<style>
+    #s{
+        font-size:20px;
+        font-weight:500;
+    }
+</style>
+
+<div class="container my-4" align="center">
+    <form method="post" action="search">
+        <p><span id="s">Search</span><input type="search" name="T1" id="txt" placeholder="Consignment Number">
+        <input type="submit" name="B1" value="Search"/></p>
+    </form>
+</div>
+
+{% if kota %}
+
+
+<table class="my-4" id="table" border="1" style="border-collapse:collapse" width="100%">
+    {% for b in kota %}
+    <tr>
+        <td>
+            <p align="center"><b>Consignment Number:{{b[0]}}</b></p>
+            <p><b>Type:{{b[1]}}</b></p>
+            <p>Date:{{b[2]}}</p>
+            <p><b>From State:{{b[3]}}</b></p>
+            <p><b>From City:{{b[4]}}</b></p>
+            <p><b>To State:{{b[5]}}</b></p>
+            <p><b>To City:{{b[6]}}</b></p>
+            <p>Sender's Name:{{b[7]}}</p>
+            <p>Sender's Address:{{b[8]}}</p>
+            <p>Contact No.:{{b[9]}}</p>
+            <p>Receiver's Name:{{b[10]}}</p>
+            <p>Reciever's Address:{{b[11]}}</p>
+            <p>Contact No.:{{b[12]}}</p>
+            <p>Weight:{{b[13]}}</p>
+        </td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="my-2" align="right">
+    <a href="#">Back To Top</a>
+</div>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+{% endblock %}

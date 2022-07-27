@@ -1,0 +1,43 @@
+{% extends "a1.html" %}
+  {% block a1 %}
+
+<h1 align="center"><i>Edit Tracking Details</i></h1>
+
+{% if kota %}
+
+<form method="post" action="edit_tracking1" class="row g-3 my-4 mx-2">
+
+    <div class="col-md-4">
+        <label for="inputcon" class="form-label">Consignment No.</label>
+        <input type="text" name="T1" class="form-control" id="inputcon" value="{{kota[0]}}">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputtext" class="form-label">Date</label>
+        <input type="date" name="T2" class="form-control" id="inputtext" value="{{kota[1]}}">
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputcity" class="form-label">Time</label>
+        <input type="time" name="T3" class="form-control" id="inputcity" value="{{kota[2]}}">
+    </div>
+
+    <div class="col-4 my-4">
+        <label for="inputstate" class="form-label">Office</label>
+        <input type="text" name="T4" class="form-control" id="inputstate" value="{{kota[3]}}">
+    </div>
+
+    <div class="col-md-4 my-4">
+        <label for="city" class="form-label">Event</label>
+        <input type="text" name="T5" class="form-control" id="city" value="{{kota[4]}}">
+    </div>
+
+    <div class="col-12 my-4">
+        <input type="submit" class="btn btn-primary" name="B1" value="Submit" />
+    </div>
+</form>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+{% endblock %}
